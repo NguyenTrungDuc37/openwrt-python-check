@@ -1,5 +1,8 @@
 openwrt-sdk-*/
 openwrt-sdk-*.tar.xz
-*.ipk
-bin/
+test-ipk/
+check-ipk/
+check_python
+check_python_test
+*.o
 .DS_Store
