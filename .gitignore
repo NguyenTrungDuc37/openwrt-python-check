@@ -1,0 +1,5 @@
+openwrt-sdk-*/
+openwrt-sdk-*.tar.xz
+*.ipk
+bin/
+.DS_Store
