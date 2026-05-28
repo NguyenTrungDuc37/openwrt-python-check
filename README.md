@@ -604,57 +604,6 @@ Architecture: x86_64
 ```
 
 ---
-
-## 10. Test package trên OpenWrt
-
-Do project hiện tại build package cho target `x86/64`, package nên được test trên OpenWrt x86_64 nếu có máy ảo hoặc hệ thống OpenWrt phù hợp.
-
-Copy package vào OpenWrt:
-
-```bash
-scp bin/check-python_1.0-1_x86_64.ipk root@192.168.1.1:/tmp/
-```
-
-SSH vào OpenWrt:
-
-```bash
-ssh root@192.168.1.1
-```
-
-Cài package:
-
-```bash
-opkg install /tmp/check-python_1.0-1_x86_64.ipk
-```
-
-Chạy chương trình:
-
-```bash
-check_python
-```
-
-Kiểm tra log:
-
-```bash
-cat /tmp/python_ver.log
-```
-
-Nếu có Python 3.9, kết quả mong muốn là:
-
-```text
-Detected Python Version: 3.9.x
-```
-
-Nếu không có Python 3.9, chương trình sẽ báo:
-
-```text
-Error: Python 3.9 not found
-```
-
-Theo yêu cầu đề bài, việc deploy lên Raspberry Pi hoặc OpenWrt thật không bắt buộc. Tuy nhiên, việc build được package `.ipk` và kiểm tra nội dung package đã chứng minh được quy trình đóng gói OpenWrt.
-
----
-
 ## 11. Git workflow
 
 Project sử dụng Git để quản lý phiên bản.
