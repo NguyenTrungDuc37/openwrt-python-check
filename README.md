@@ -1032,3 +1032,49 @@ Tag release:
 ```text
 v1.0-python-check
 ```
+## 16. Hình ảnh minh chứng kết quả thực hiện
+
+### 16.1. Docker environment và OpenWrt SDK/toolchain
+
+Ảnh dưới đây chứng minh Docker image `openwrt-sdk-env` đã được tạo, container chạy thành công, OpenWrt SDK tồn tại và toolchain `x86_64-openwrt-linux-musl-gcc` hoạt động.
+
+![Docker OpenWrt SDK](images/q14.png)
+
+---
+
+### 16.2. Chương trình C hoạt động và ghi log
+
+Ảnh dưới đây cho thấy chương trình C sử dụng `popen()` để gọi `python3.9 --version`, chạy thành công trong Docker, in ra `Detected Python Version: 3.9.25` và ghi log vào `/tmp/python_ver.log`.
+
+![C Program Run](images/q13.png)
+
+---
+
+### 16.3. Kiểm tra package `.ipk`
+
+Ảnh dưới đây cho thấy file `check-python_1.0-1_x86_64.ipk` đã được tạo, có định dạng hợp lệ và chứa thông tin package như `Package`, `Version`, `Architecture`.
+
+![IPK Package Check](images/q12.png)
+
+---
+
+### 16.4. Git branch và tag
+
+Ảnh dưới đây chứng minh project sử dụng branch `feature/python-version-check` và tag `v1.0-python-check`.
+
+![Git Branch Tag](images/q11.png)
+
+---
+
+### 16.5. Test trong OpenWrt rootfs
+
+Ảnh dưới đây chứng minh package được kiểm tra trong OpenWrt rootfs x86_64. Do image OpenWrt snapshot không có sẵn `opkg`, package được giải nén và tích hợp thủ công vào rootfs để mô phỏng quá trình cài đặt.
+
+![OpenWrt Rootfs Test](images/q6.png)
+![OpenWrt Rootfs Test](images/q5.png)
+![OpenWrt Rootfs Test](images/q4.png)
+![OpenWrt Rootfs Test](images/q3.png)
+![OpenWrt Rootfs Test](images/q2.png)
+![OpenWrt Rootfs Test](images/q1.png)
+
+
